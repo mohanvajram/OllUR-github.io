@@ -1,0 +1,36 @@
+.orders-page { max-width: 860px; margin: 0 auto; padding: 32px 24px 60px; }
+.orders-header { margin-bottom: 24px; }
+.orders-header h1 { font-size: 26px; }
+.orders-header p { color: var(--text-muted); font-size: 14px; margin-top: 4px; }
+
+.orders-empty { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 80px 0; color: var(--text-muted); }
+
+.orders-list { display: flex; flex-direction: column; gap: 16px; }
+.order-card { padding: 20px 24px; }
+
+.order-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 14px; flex-wrap: wrap; gap: 10px; }
+.order-id { font-family: var(--font-head); font-weight: 700; font-size: 16px; display: block; }
+.order-date { font-size: 12px; color: var(--text-muted); }
+.order-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+
+.order-items { background: var(--bg); border-radius: var(--radius-sm); padding: 12px 14px; margin-bottom: 12px; }
+.order-item-row { display: flex; align-items: center; gap: 8px; padding: 5px 0; font-size: 14px; border-bottom: 1px solid var(--border); }
+.order-item-row:last-child { border-bottom: none; }
+.order-item-name { flex: 1; color: var(--text); }
+.order-item-qty { color: var(--text-muted); }
+.order-item-price { font-weight: 600; color: var(--green); min-width: 70px; text-align: right; }
+
+.order-address { font-size: 13px; color: var(--text-soft); margin-bottom: 12px; }
+
+.order-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+.order-total { font-size: 15px; color: var(--text-soft); }
+.order-total strong { color: var(--green); font-size: 17px; }
+
+.status-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+.status-btn {
+  padding: 5px 12px; border-radius: 99px; border: 1.5px solid var(--border);
+  font-size: 12px; font-weight: 500; background: var(--white); cursor: pointer;
+  transition: all .15s; color: var(--text-soft);
+}
+.status-btn:hover { border-color: var(--green); color: var(--green); background: var(--green-light); }
+.status-btn.cancelled:hover { border-color: #ef4444; color: #ef4444; background: #fef2f2; }

@@ -1,0 +1,90 @@
+.checkout-page {
+  max-width: 1100px; margin: 0 auto; padding: 32px 24px 60px;
+  display: grid; grid-template-columns: 1fr 380px; gap: 28px; align-items: start;
+}
+@media (max-width: 800px) { .checkout-page { grid-template-columns: 1fr; } }
+
+.checkout-left h2 { font-size: 22px; margin-bottom: 16px; }
+.cart-list { display: flex; flex-direction: column; gap: 12px; }
+
+.cart-item {
+  display: flex; align-items: center; gap: 14px;
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 14px 16px;
+}
+.cart-item img { width: 56px; height: 56px; border-radius: var(--radius-sm); object-fit: cover; }
+.cart-item-info { flex: 1; }
+.cart-item-name { font-weight: 600; font-size: 14px; }
+.cart-item-price { font-size: 12px; color: var(--text-muted); }
+.cart-item-controls { display: flex; align-items: center; gap: 12px; }
+.cart-item-subtotal { font-weight: 700; color: var(--green); font-size: 15px; min-width: 60px; text-align: right; }
+.remove-btn { background: none; border: none; font-size: 16px; cursor: pointer; opacity: .6; }
+.remove-btn:hover { opacity: 1; }
+
+.checkout-summary { padding: 24px; }
+.checkout-summary h3 { font-size: 18px; margin-bottom: 18px; }
+.section-label { font-size: 13px; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; }
+
+.delivery-options { display: flex; flex-direction: column; gap: 8px; margin-bottom: 4px; }
+.delivery-opt {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 14px; border-radius: var(--radius-sm);
+  border: 2px solid var(--border); background: var(--bg);
+  text-align: left; cursor: pointer; transition: all .15s;
+}
+.delivery-opt:hover { border-color: var(--green); }
+.delivery-opt.active { border-color: var(--green); background: var(--green-light); }
+.delivery-opt.active .opt-icon { background: var(--green); }
+.opt-icon {
+  font-size: 20px; width: 40px; height: 40px; border-radius: 50%;
+  background: var(--border); display: flex; align-items: center; justify-content: center;
+  transition: background .15s; flex-shrink: 0;
+}
+.delivery-opt strong { font-size: 14px; display: block; }
+.delivery-opt p { font-size: 12px; color: var(--text-muted); margin: 0; }
+
+.summary-rows { margin: 20px 0; display: flex; flex-direction: column; gap: 10px; }
+.summary-row { display: flex; justify-content: space-between; font-size: 14px; color: var(--text-soft); }
+.summary-row.total { font-size: 17px; font-weight: 700; color: var(--text); border-top: 1px solid var(--border); padding-top: 10px; margin-top: 4px; }
+.free { color: var(--green); font-weight: 600; }
+
+.place-btn { width: 100%; padding: 13px; font-size: 15px; border-radius: var(--radius-sm); }
+
+.checkout-empty, .checkout-success {
+  display: flex; align-items: center; justify-content: center;
+  min-height: calc(100vh - 62px); padding: 32px;
+}
+.checkout-empty { flex-direction: column; gap: 12px; text-align: center; color: var(--text-soft); }
+.checkout-empty h2 { font-size: 22px; }
+
+.success-card {
+  background: var(--white); border-radius: var(--radius);
+  border: 1px solid var(--border); box-shadow: var(--shadow-md);
+  padding: 48px 40px; text-align: center; max-width: 460px; width: 100%;
+}
+.success-icon { font-size: 56px; margin-bottom: 16px; }
+.success-card h2 { font-size: 26px; margin-bottom: 10px; }
+.success-card p { color: var(--text-soft); font-size: 15px; }
+.success-sub { margin-top: 8px; font-size: 14px; }
+.success-actions { display: flex; gap: 10px; justify-content: center; margin-top: 28px; }
+
+.recurring-toggle, .wallet-toggle {
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--bg); border-radius: var(--radius-sm);
+  padding: 12px 14px; margin: 12px 0 8px; cursor: pointer;
+  border: 1px solid var(--border); transition: border-color .15s;
+}
+.recurring-toggle:hover, .wallet-toggle:hover { border-color: var(--green); }
+.recurring-toggle strong, .wallet-toggle strong { font-size: 13px; display: block; margin-bottom: 2px; }
+.recurring-toggle p, .wallet-toggle p { font-size: 12px; color: var(--text-muted); margin: 0; }
+.toggle-switch {
+  width: 36px; height: 20px; border-radius: 99px; background: var(--border);
+  position: relative; transition: background .2s; flex-shrink: 0;
+}
+.toggle-switch::after {
+  content: ''; position: absolute; width: 16px; height: 16px;
+  border-radius: 50%; background: #fff; top: 2px; left: 2px;
+  transition: transform .2s; box-shadow: 0 1px 3px rgba(0,0,0,.2);
+}
+.toggle-switch.on { background: var(--green); }
+.toggle-switch.on::after { transform: translateX(16px); }
